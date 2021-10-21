@@ -24,9 +24,9 @@ public class Audience implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String name;
     private String owner;
     private Integer capacity;
-    private String name;
     private String description;
 
     @ManyToOne
@@ -50,6 +50,14 @@ public class Audience implements Serializable {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getOwner() {
         return owner;
     }
@@ -64,14 +72,6 @@ public class Audience implements Serializable {
 
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
@@ -105,4 +105,5 @@ public class Audience implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
 }
